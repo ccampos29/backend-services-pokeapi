@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.campos.com/pokeapi/gen"
+           targetNamespace="http://www.campos.com/pokeapi/gen" elementFormDefault="qualified">
+    <!-- Find All -->
+    <xs:element name="getPokemonsRequest">
+        <xs:complexType>
+            <xs:sequence>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getPokemonsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="next" type="xs:string"/>
+                <xs:element name="previous" type="xs:string"/>
+                <xs:element name="count" type="xs:int"/>
+                <xs:element name="results" type="tns:Pokemon" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Pokemon">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
